@@ -1,0 +1,46 @@
+!############################################!
+!############################################!
+! 	Ellipsoid Rebound Box - Parameters   ! 			
+!############################################!
+!############################################!
+1.0e-5		    ! DT_INIT
+!############################################!
+100000		    ! NCYCLEMAX
+!############################################!
+0.314		    ! LXMAX
+0.314		    ! LYMAX
+0.314		    ! LZMAX
+!############################################!
+50000               ! NPART_MAX
+0                   ! INIT
+400.0e-06	    ! ELL_A
+2.0                 ! lambda
+!############################################!
+.true.              ! WALL
+1.0     	    ! EW
+0.0                 ! MUW
+0.0                 ! BETAW
+!############################################!
+DT_INIT   ----> Time step
+
+NCYCLEMAX ----> Maximum number of cycles
+
+LXMAX     ----> Length of the box
+LYMAX     ----> Width  of the box
+LZMAX     ----> Height of the box
+
+NPART_MAX ----> Maximum number of particles
+INIT      ----> Particle Initiation
+		INIT == 0 > Random Initiation
+		INIT == 1 > Read from file
+ELL_A     ----> Semi-Major axis of Ellipsoid
+lambda    ----> Aspect Ratio, 
+		lambda = ELL_A/(ELL_B=ELL_C)
+
+WALL      ----> Boundary Condition
+                .true.  == BOX B.C.
+		.false. == PERIODIC B.C.
+EW 	  ----> Coeff. of Normal Restitution
+MUW       ----> Coefficient   of    Friction
+BETAW     ----> Coeff. of Tang.  Restitution
+!############################################!

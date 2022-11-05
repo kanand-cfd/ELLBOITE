@@ -72,10 +72,6 @@ end do
 write(*,*) ' Time loop ended !!!'
 
 
-!write(*, *) 'Wall  Rebound  in  cycle ', NCYCLE, ' =',  WALL_COUNT
-!write(*, *) 'Collision count in cycle ', NCYCLE, ' =',  COLLISION_COUNT
-!if(COLL_FLAG) write(*, *) 'Collision erros in cycle ', NCYCLE, ' =',  ERROR_COUNT
-
 call save_particle
 
 write(*,*) '**************************************'

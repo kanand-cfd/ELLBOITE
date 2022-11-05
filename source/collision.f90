@@ -8,7 +8,7 @@ implicit none
 
 integer, intent(in) :: NCYCLE
 
-integer :: I, J, NO
+integer :: I, J
 
 logical :: flag
 
@@ -47,10 +47,7 @@ COLLISION_COUNT = 0
 ERROR_COUNT = 0
 AVG_ERROR = 0.0
 
-CONTTACT = 0
-NO_CONTACT = 0
 
-NO = 0
 
 do I = 1, NPART_MAX
     do J = I+1, NPART_MAX
@@ -157,10 +154,7 @@ if(COLL_FLAG) then
     write(*, *) 'Average ERROR   in cycle ', NCYCLE, ' =', AVG_ERROR
 end if 
 
-!write(*, *) '               Contact                = ', CONTTACT
-!write(*, *) '               No Contact             = ', NO_CONTACT
-!write(*, *) '               No Contacts collided   = ', NO
-!write(*, *) ' '
+
 !write(*,*) 'End of Collision step'
 !stop    
 end subroutine COLLISION

@@ -47,19 +47,6 @@ transform_basis.o \
 invert_ndim3_matrix.o \
 save_particle.o
 
-
-EOBJS = \
-ellipsoid_overlap_detection.o \
-ell_full2eig.o \
-ell_full2low.o \
-ell_low2chol.o \
-ell_pair_separate.o \
-ellu_pt_near_far.o \
-ell_line_proj.o \
-dgqt.o \
-destsv.o
-
-
 MOD = *.mod
 
 LIBS = $(BLAS) $(LAPACK)

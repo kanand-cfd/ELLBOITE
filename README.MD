@@ -7,3 +7,8 @@ The linear motion is computed using a simple forward-Euler scheme.
 The rotational motion is computed using the Euler equation of rotational motion using an RK4 scheme.
 
 The orientation of the ellipsoids are tracked using Quaternions.
+
+Apart from tracking the position and motion of every particle, this code also allows them to collide with each other. At every time-step binary collisions are tracked.
+
+To detect whether two ellipsoids are in contact a robust contact-detection algorithm has been developed.
+

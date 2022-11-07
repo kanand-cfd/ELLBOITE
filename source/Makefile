@@ -9,7 +9,7 @@ BLAS = /usr/local/lib/libblas.a
 LAPACK = /usr/local/lib/liblapack.a
 
 # Name of executable
-EXE = /Users/karan94/Documents/Ellipsoidal/Ellipsoid_Box/ellbox
+EXE = ellbox
 
 # Defining the objects variables
 MODOBJS = \

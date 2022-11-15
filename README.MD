@@ -7,6 +7,26 @@ Apart from tracking the position and motion of every particle, this code also al
 
 Once it is detected that a pair of ellipsoids are in overlap a proper collision impulse is imparted on the ellipsoids using a collision model based on hard-sphere model extended to ellipsiods [2].
 
+## Code Overview
+> main.f90          : Main file of the program
+
+> readparams.f90    : Reads the 'params.in' file to initialise key parameters of the simulation
+
+> init_params.f90   : Initialisation of phyiscal parameters, particle arrays to be used in the simulation
+
+> init_particle.f90 : Random initialisation of the particle position, velocity, orientation (by virtue of quaternions) and angular velocity
+
+In the time loop
+
+> adv_particle.f90  : Advance the position, orientation, linear and angular velocity of the particles for the next time interval
+> collision.f90     : Handling collision between particles
+> stat_particle.f90 : Calculation of time-averaged statistics (under progress)
+
+'ADV_PARTICLE' subroutine calls 
+> box_boundary_condtions.f90
+                    
+ 
+
 
 ## References
 

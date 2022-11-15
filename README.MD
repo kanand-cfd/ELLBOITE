@@ -19,12 +19,20 @@ Once it is detected that a pair of ellipsoids are in overlap a proper collision 
 In the time loop
 
 > adv_particle.f90  : Advance the position, orientation, linear and angular velocity of the particles for the next time interval
+
 > collision.f90     : Handling collision between particles
+
 > stat_particle.f90 : Calculation of time-averaged statistics (under progress)
 
-'ADV_PARTICLE' subroutine calls 
-> box_boundary_condtions.f90
-                    
+Apart from the time integration of linear velocity and position of ellipsoidal particles, 'adv_particle.f90' subroutine calls 
+
+> box_boundary_condtions.f90 : Detects and calculates collision impulse of ellipsoids and the box walls
+
+> quaternion_integration.f90 : Time integration of quaternion of ellipsoids to update the orientation of ellipsoids
+
+> euler_integration.f90 : Time integration of angular velocities using Euler Equations (uses an RK4 scheme)
+
+> boundary_particle.f90: Periodic Boundary Conditions (if one decides not to use walls : possibly a thing of future)
  
 
 

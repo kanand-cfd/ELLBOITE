@@ -32,7 +32,7 @@ closest_point_plane.o \
 max_encroachment_ellipsoid.o \
 wall_ellipsoid_rebound.o \
 collision.o \
-ellipsoid_contact_detection_new.o \
+ellipsoid_contact_detection.o \
 ellipsoid_pair_depth.o \
 calculate_ellipsoid_matrix.o \
 collision_response.o \

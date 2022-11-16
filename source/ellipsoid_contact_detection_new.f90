@@ -33,19 +33,19 @@ real(kind=8), dimension(ndim, 1) :: global_min
 
 real(kind=8) :: contact, norm_depth, dist_center, c_norm
 
-real(kind=8) :: global_min_norm, XRAND
+real(kind=8) :: global_min_norm !, XRAND
 
 ! Arbitrary unit vector at common normal
 real(kind=8), dimension(ndim, 1):: center_normal
 
-real(kind=8), dimension(ndim, 1):: cvec1, cvec2
+real(kind=8), dimension(ndim, 1):: cvec1 !, cvec2
 
 ! Ellipsoid centres
 real(kind=8), dimension(ndim, 1):: b1, b2
 
 integer :: COUNT
 
-real(wp) :: x_loc(2)
+!real(wp) :: x_loc(2)
 
 ! ====================== LMDER ======================= !
 integer, parameter :: n =2

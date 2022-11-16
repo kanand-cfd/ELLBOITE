@@ -122,7 +122,7 @@ do I = 1, NPART_MAX
                     !write(*,*) ELLP(J)%UP, ELLP(J)%VP, ELLP(J)%WP
 
                     ! Calculate the impulse on the particles and Update the velocities
-                    if(COLL_FLAG) call  COLLISION_RESPONSE(ELLP(I), ELLP(J), EPT1, EPT2, cnormal, I, J)
+                    if(COLL_FLAG) call  COLLISION_RESPONSE(ELLP(I), ELLP(J), EPT1, EPT2, cnormal)
 
                     !write(*,*) 'After Collision '
                     !write(*,*) ELLP(I)%UP, ELLP(I)%VP, ELLP(I)%WP

@@ -1,4 +1,4 @@
-subroutine COLLISION_RESPONSE(part1, part2, point1, point2, normal, I, J)
+subroutine COLLISION_RESPONSE(part1, part2, point1, point2, normal)
 
 use param_phys
 use ellipsoid_particle
@@ -12,7 +12,7 @@ type(ELL_PART), intent(inout) :: part1, part2
 
 real(kind=8), dimension(ndim, 1), intent(in) :: point1, point2, normal
 
-integer, intent(in) :: I, J
+!integer, intent(in) :: I, J
 !=================================================!
 !=================================================!
 ! Impact Arm

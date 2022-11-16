@@ -33,11 +33,7 @@ max_encroachment_ellipsoid.o \
 wall_ellipsoid_rebound.o \
 collision.o \
 ellipsoid_contact_detection_new.o \
-gradient_descent_ellipsoid.o \
-ellipsoid_contact_optimization.o \
 ellipsoid_pair_depth.o \
-eval_func.o \
-eval_func2.o \
 calculate_ellipsoid_matrix.o \
 collision_response.o \
 boundary_particle.o \

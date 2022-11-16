@@ -8,6 +8,8 @@ Apart from tracking the position and motion of every particle, this code also al
 Once it is detected that a pair of ellipsoids are in overlap a proper collision impulse is imparted on the ellipsoids using a collision model based on hard-sphere model extended to ellipsiods [2].
 
 ## Code Overview
+
+### 
 > main.f90          : Main file of the program
 
 > readparams.f90    : Reads the 'params.in' file to initialise key parameters of the simulation
@@ -16,7 +18,7 @@ Once it is detected that a pair of ellipsoids are in overlap a proper collision 
 
 > init_particle.f90 : Random initialisation of the particle position, velocity, orientation (by virtue of quaternions) and angular velocity
 
-In the time loop
+### In the time loop
 
 > adv_particle.f90  : Advance the position, orientation, linear and angular velocity of the particles for the next time interval
 
@@ -24,7 +26,7 @@ In the time loop
 
 > stat_particle.f90 : Calculation of time-averaged statistics (under progress)
 
-Apart from the time integration of linear velocity and position of ellipsoidal particles, 'adv_particle.f90' subroutine calls 
+### Apart from the time integration of linear velocity and position of ellipsoidal particles, 'adv_particle.f90' subroutine calls 
 
 > box_boundary_condtions.f90 : Detects and calculates collision impulse of ellipsoids and the box walls
 
@@ -34,6 +36,22 @@ Apart from the time integration of linear velocity and position of ellipsoidal p
 
 > boundary_particle.f90: Periodic Boundary Conditions (if one decides not to use walls : possibly a thing of future)
  
+### The subroutine "collision.f90" detects whether a particle pair is overlapping. If an overlap is detected an impulse is imparted on the particle pair. It calls the following subroutines :
+
+> ellipsoid_contact_detection.f90 : Detects whether a particle pair is overlapping or not
+
+> collision_response.f90 : Imparts appropriate impulse on the particle pair once overlap is confirmed
+
+### After the time loop
+
+> save_particle.f90 : At the end of the simulation this subroutine saves the last state (position, linear & angular velocities and orientation) of the particles
+
+### Miscellaneous subroutines
+
+> transform_basis.f90 : Transforms the frame of reference of the ellipsoid from local to global by taking into account the orientation. 
+
+> invert_ndim3_matrix.f90 : invert a 3x3 matrix
+
 
 
 ## References

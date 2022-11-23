@@ -159,9 +159,9 @@ do I = 1, NPART_MAX
 
 end do
 
-MEAN_PART(21) = 0.5*(MEAN_PART(14) + &
-                     MEAN_PART(15) + &
-                     MEAN_PART(16))
+MEAN_PART(21) = 0.5*(IPXX*MEAN_PART(14) + &
+                     IPYY*MEAN_PART(15) + &
+                     IPZZ*MEAN_PART(16))
 
 
 MEAN_PART(:) = MEAN_PART(:)/NPART_MAX

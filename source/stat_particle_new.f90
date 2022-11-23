@@ -109,11 +109,11 @@ do I = 1, NPART_MAX
     ELLP(I)%GOMEGAY = global_angular_velocity(2,1)
     ELLP(I)%GOMEGAZ = global_angular_velocity(3,1)
 
-    MEAN_PART(11) = MEAN_PART(11) + ELLP(I)%GOMEGAX
+    MEAN_PART(11) = MEAN_PART(11) + ELLP(I)%OMEGAX
 
-    MEAN_PART(12) = MEAN_PART(12) + ELLP(I)%GOMEGAY
+    MEAN_PART(12) = MEAN_PART(12) + ELLP(I)%OMEGAY
 
-    MEAN_PART(13) = MEAN_PART(13) + ELLP(I)%GOMEGAZ
+    MEAN_PART(13) = MEAN_PART(13) + ELLP(I)%OMEGAZ
 
 ! global Inertia Matrix
     call transform_basis(I_p, ELLP(I)%ELLQUAT, shape(I_p))
@@ -130,11 +130,11 @@ OZM = MEAN_PART(13)/NPART_MAX
 
 do I = 1, NPART_MAX
 
-    OXFLC = ELLP(I)%GOMEGAX !- OXM
+    OXFLC = ELLP(I)%OMEGAX - OXM
 
-    OYFLC = ELLP(I)%GOMEGAY !- OYM
+    OYFLC = ELLP(I)%OMEGAY - OYM
 
-    OZFLC = ELLP(I)%GOMEGAZ !- OZM
+    OZFLC = ELLP(I)%OMEGAZ - OZM
 
     MEAN_PART(14) = MEAN_PART(14) + OXFLC*OXFLC
 

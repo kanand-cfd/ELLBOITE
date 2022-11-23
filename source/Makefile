@@ -9,7 +9,7 @@ BLAS = /usr/local/lib/libblas.a
 LAPACK = /usr/local/lib/liblapack.a
 
 # Name of executable
-EXE = ellboite
+EXE = ../ellboite
 
 # Defining the objects variables
 MODOBJS = \

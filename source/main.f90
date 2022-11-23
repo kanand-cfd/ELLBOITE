@@ -21,7 +21,7 @@ call INIT_PARAM
 
 call INIT_PARTICLE
 
-COLL_FLAG = .true.
+COLL_FLAG = .false.
 
 CPU_INIT = 0.0
 CPU_ELAPSED = 0.0
@@ -51,7 +51,7 @@ do while(CONT)
 
     call ADV_PARTICLE(NCYCLE)
 
-    call COLLISION(NCYCLE)
+    if(COLL_FLAG) call COLLISION(NCYCLE)
 
 
     if(NCYCLE == NCYCLEMAX) CONT = .false.

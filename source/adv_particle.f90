@@ -28,6 +28,6 @@ end do
 
 if(WALL .eqv. .FALSE.) call BOUNDARY_PARTICLE
 
-write(*, *) 'Wall  Rebound  in  cycle ', NCYCLE, ' =',  WALL_COUNT
+!write(*, *) 'Wall  Rebound  in  cycle ', NCYCLE, ' =',  WALL_COUNT
     
 end subroutine ADV_PARTICLE

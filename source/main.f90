@@ -45,17 +45,19 @@ do while(CONT)
 
     call CPU_TIME(ti)
 
-    call STAT_PARTICLE_OLD(NCYCLE, TIME)
+    if(mod(NCYCLE, STAT_CALC) == 0) then
 
-    call STAT_PARTICLE(NCYCLE, TIME)
+        call STAT_PARTICLE_OLD(NCYCLE, TIME)
+
+        call STAT_PARTICLE(NCYCLE, TIME)
+
+    end if
 
     call ADV_PARTICLE(NCYCLE)
 
     if(COLL_FLAG) call COLLISION(NCYCLE)
 
-
     if(NCYCLE == NCYCLEMAX) CONT = .false.
-
     
     TIME = TIME + DT_INIT
 

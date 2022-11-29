@@ -45,6 +45,7 @@ real(kind=8) :: MUW
 real(kind=8) :: BETAW
 
 ! Statistics
+integer :: STAT_CALC, STAT_WRITE
 logical :: COLL_FLAG
 integer :: NREBOUND, COLLISION_COUNT, ERROR_COUNT, WALL_COUNT, CONTTACT, NO_CONTACT
 real(kind=8) :: AVG_ERROR

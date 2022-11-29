@@ -147,27 +147,32 @@ MEAN_PART(20) = 0.5*(IPXX*MEAN_PART(10) + &
 MEAN_PART(:) = MEAN_PART(:)/NPART_MAX
 
 
-write(500, 10000) &
-        TIME, MEAN_PART(1), &   !! <Up>
-              MEAN_PART(2), &   !! <Vp>
-              MEAN_PART(3), &   !! <Wp>
-              MEAN_PART(4), &   !! <OMEGAX>
-              MEAN_PART(5), &   !! <OMEGAY>
-              MEAN_PART(6), &   !! <OMEGAZ>
-              MEAN_PART(7), &   !!- <upup>
-              MEAN_PART(8), &   !!- <vpvp>
-              MEAN_PART(9), &   !!- <wpwp>
-              MEAN_PART(10), &  !!- <oxp.oxp>
-              MEAN_PART(11), &  !!- <oyp.oyp>
-              MEAN_PART(12), &  !!- <ozp.ozp>
-              MEAN_PART(13), &  !!- <upvp>
-              MEAN_PART(14), &  !!- <upwp>
-              MEAN_PART(15), &  !!- <vpwp>
-              MEAN_PART(16), &  !!- <oxp.oyp>
-              MEAN_PART(17), &  !!- <oxp.ozp>
-              MEAN_PART(18), &  !!- <oyp.ozp>  
-              MEAN_PART(19), &  !!- qp - Linear Velocity
-              MEAN_PART(20)!, &  !!- qp - Angular Velocity      
+if(mod(NCYCLE, STAT_WRITE)==0) then 
+
+    write(500, 10000) &
+    TIME, &
+    MEAN_PART(1), &   !! <Up>
+    MEAN_PART(2), &   !! <Vp>
+    MEAN_PART(3), &   !! <Wp>
+    MEAN_PART(4), &   !! <OMEGAX>
+    MEAN_PART(5), &   !! <OMEGAY>
+    MEAN_PART(6), &   !! <OMEGAZ>
+    MEAN_PART(7), &   !!- <upup>
+    MEAN_PART(8), &   !!- <vpvp>
+    MEAN_PART(9), &   !!- <wpwp>
+    MEAN_PART(10), &  !!- <oxp.oxp>
+    MEAN_PART(11), &  !!- <oyp.oyp>
+    MEAN_PART(12), &  !!- <ozp.ozp>
+    MEAN_PART(13), &  !!- <upvp>
+    MEAN_PART(14), &  !!- <upwp>
+    MEAN_PART(15), &  !!- <vpwp>
+    MEAN_PART(16), &  !!- <oxp.oyp>
+    MEAN_PART(17), &  !!- <oxp.ozp>
+    MEAN_PART(18), &  !!- <oyp.ozp>  
+    MEAN_PART(19), &  !!- qp - Linear Velocity
+    MEAN_PART(20)!, &  !!- qp - Angular Velocity      
+
+end if 
 
  
 10000 format (30(e17.7))   

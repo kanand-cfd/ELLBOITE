@@ -59,8 +59,8 @@ do I = 1, NPART_MAX
         if(ELLP(I)%COLOR == 1.0 .and. ELLP(J)%COLOR == 1.0) then
 
             call ELLIPSOID_CONTACT_DETECTION(ELLP(I)%XP, ELLP(I)%YP, ELLP(I)%ZP, ELLP(I)%ELLQUAT, &
-                                                 ELLP(J)%XP, ELLP(J)%YP, ELLP(J)%ZP, ELLP(J)%ELLQUAT, & 
-                                                 flag, EPT1, EPT2, cnormal)
+                                             ELLP(J)%XP, ELLP(J)%YP, ELLP(J)%ZP, ELLP(J)%ELLQUAT, & 
+                                             flag, EPT1, EPT2, cnormal)
 
             ! Apply Pope's algorithm to detect whether we have intersection
             !call ELLIPSOID_OVERLAP_DETECTION(ELLP(I)%XP, ELLP(I)%YP, ELLP(I)%ZP, ELLP(I)%ELLQUAT, &

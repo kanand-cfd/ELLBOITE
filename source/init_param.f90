@@ -31,6 +31,11 @@ Volume_Box = LXMAX*LYMAX*LZMAX
 ! Volume fraction
 alpha = (NPART_MAX * Volume_Particle)/Volume_Box
 
+! Parameters for statistics caluclation and writing data
+STAT_CALC = 1000
+STAT_WRITE = 100
+
+
 
 write(*,*) '  '
 print*, '#####################################'
